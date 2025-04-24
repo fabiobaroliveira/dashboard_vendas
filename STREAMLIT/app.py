@@ -10,7 +10,8 @@ st.title('🚗 Dashboard de Vendas - Veículos Seminovos')
 # Carrega os dados do arquivo CSV
 @st.cache_data
 def load_data():
-    return pd.read_csv("vendas_loja_seminovos.csv", sep=";")
+    url = "https://raw.githubusercontent.com/seu-usuario/seu-repo/main/vendas_loja_seminovos.csv"
+    return pd.read_csv(url, sep=";")
 
 df = load_data()
 
