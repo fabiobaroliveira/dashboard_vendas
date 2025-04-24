@@ -161,5 +161,5 @@ st.bar_chart(vendas_por_lead,
 # Rodapé
 st.write("""
 ---
-Python Cars 🐍 - Dados fictícios para fins didáticos
+Python Cars 🐍 - Dados fictícios gerados para fins didáticos
 """)
