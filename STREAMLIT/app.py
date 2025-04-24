@@ -10,9 +10,13 @@ st.title('🚗 Dashboard de Vendas - Veículos Seminovos')
 # Carrega os dados do arquivo CSV
 @st.cache_data
 def load_data():
-    url = "https://github.com/fabiobaroliveira/dashboard_vendas/blob/main/STREAMLIT/vendas_loja_seminovos.csv"
-    return pd.read_csv(url, sep=";")
-    
+    url = "https://raw.githubusercontent.com/fabiobaroliveira/dashboard_vendas/main/STREAMLIT/vendas_loja_seminovos.csv"
+    try:
+        return pd.read_csv(url, sep=";")
+    except Exception as e:
+        st.error(f"Erro ao carregar dados: {str(e)}")
+        return pd.DataFrame()  # Retorna DataFrame vazio para evitar crash    
+        
 df = load_data()
 
 # Sidebar para filtros
